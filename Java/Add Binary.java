@@ -2,29 +2,22 @@ public class Solution {
 	public String addBinary(String a, String b) {
 		int al = a.length();
 		int bl = b.length();
-		if (bl > al) {
-			String tmp = b;
-			b = a;
-			a = tmp;
-		}
-		a = "0" + a;
-		al = a.length();
-		bl = b.length();
-
-		char[] ac = a.toCharArray();
-		char[] bc = b.toCharArray();
-		for (int i = 0; i < al; i++) {
+		int cl = al > bl ? al + 1 : bl + 1;
+		char[] cc = new char[cl];
+		for (int i = 0; i < cl; i++) {
+			cc[cl - i - 1] += '0';
+			if (al - i - 1 >= 0)
+				cc[cl - i - 1] += a.charAt(al - i - 1) - '0';
 			if (bl - i - 1 >= 0)
-				ac[al - i - 1] += bc[bl - i - 1] - '0';
-			if (ac[al - i - 1] >= '2') {
-				ac[al - i - 1] -= 2;
-				ac[al - i - 2]++;
+				cc[cl - i - 1] += b.charAt(bl - i - 1) - '0';
+			if (cc[cl - i - 1] >= '2') {
+				cc[cl - i - 1] -= 2;
+				cc[cl - i - 2]++;
 			}
 		}
-
-		String s = String.valueOf(ac);
-		if (s.charAt(0) == '0')
-			s = s.substring(1);
-		return s;
+		String c = String.valueOf(cc);
+		if (c.charAt(0) == '0')
+			c = c.substring(1);
+		return c;
 	}
 }
