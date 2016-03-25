@@ -16,7 +16,7 @@ public class Solution {
 //				return true;
 //		return false;
 
-		// version 3
+		// version 2.1
 		Set<Integer> s = new HashSet<>();
 		int l = nums.length;
 		for (int i = 0; i < l; i++)

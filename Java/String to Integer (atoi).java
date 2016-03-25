@@ -3,7 +3,7 @@ public class Solution {
 		str = str.trim();
 		int l = str.length();
 		for (int i = 0; i < l; i++)
-			if (str.charAt(i) < '0' || str.charAt(i) > '9') {
+			if (!Character.isDigit(str.charAt(i))) {
 				if (i == 0 && str.charAt(i) != '+' && str.charAt(i) != '-')
 					return 0;
 				if (i > 0) {

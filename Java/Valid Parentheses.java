@@ -8,21 +8,21 @@ public class Solution {
 				if (!sk.empty() && sk.peek() == '(')
 					sk.pop();
 				else
-					sk.push(s.charAt(i));
+					return false;
 				break;
 
 			case ']':
 				if (!sk.empty() && sk.peek() == '[')
 					sk.pop();
 				else
-					sk.push(s.charAt(i));
+					return false;
 				break;
 
 			case '}':
 				if (!sk.empty() && sk.peek() == '{')
 					sk.pop();
 				else
-					sk.push(s.charAt(i));
+					return false;
 				break;
 
 			default:
