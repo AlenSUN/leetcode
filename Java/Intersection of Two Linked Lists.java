@@ -9,22 +9,18 @@
  *     }
  * }
  */
+// use hash table
 public class Solution {
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 		Set<ListNode> s = new HashSet<>();
-		while (headA != null || headB != null) {
-			if (headA != null) {
-				if (!s.add(headA))
-					return headA;
-				else
-					headA = headA.next;
-			}
-			if (headB != null) {
-				if (!s.add(headB))
-					return headB;
-				else
-					headB = headB.next;
-			}
+		while (headA != null) {
+			s.add(headA);
+			headA = headA.next;
+		}
+		while (headB != null) {
+			if (s.contains(headB))
+				return headB;
+			headB = headB.next;
 		}
 		return null;
 	}
