@@ -12,8 +12,9 @@ class MyStack {
 		while (q.size() > 1)
 			t.add(q.remove());
 		q.remove();
-		while (!t.isEmpty())
-			q.add(t.remove());
+		Queue<Integer> x = q;
+		q = t;
+		t = x;
 	}
 
 	// Get the top element.

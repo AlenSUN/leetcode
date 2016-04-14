@@ -9,30 +9,30 @@
 public class Solution {
 	public ListNode oddEvenList(ListNode head) {
 		// version 1.0
-//		ListNode odd = null, even = null;
-//		ListNode oddtail = null, evenhead = null;
-//		if (head != null) {
-//			odd = head;
-//			even = head.next;
-//			evenhead = head.next;
-//		}
-//		while (even != null) {
-//			if (even.next == null) {
-//				oddtail = odd;
-//				break;
-//			}
-//			odd.next = even.next;
-//			odd = odd.next;
-//			if (odd != null) {
-//				even.next = odd.next;
-//				even = even.next;
-//			}
-//		}
-//		if (even == null)
-//			oddtail = odd;
-//		if (oddtail != null)
-//			oddtail.next = evenhead;
-//		return head;
+		ListNode odd = null, even = null;
+		ListNode oddtail = null, evenhead = null;
+		if (head != null) {
+			odd = head;
+			even = head.next;
+			evenhead = head.next;
+		}
+		while (even != null) {
+			if (even.next == null) {
+				oddtail = odd;
+				break;
+			}
+			odd.next = even.next;
+			odd = odd.next;
+			if (odd != null) {
+				even.next = odd.next;
+				even = even.next;
+			}
+		}
+		if (even == null)
+			oddtail = odd;
+		if (oddtail != null)
+			oddtail.next = evenhead;
+		return head;
 
 		// version 1.1
 		if (head == null)
